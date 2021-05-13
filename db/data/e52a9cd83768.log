@@ -1,0 +1,5 @@
+mysqld, Version: 10.5.9-MariaDB-1:10.5.9+maria~focal (mariadb.org binary distribution). started with:
+Tcp port: 3306  Unix socket: /run/mysqld/mysqld.sock
+Time		    Id Command	Argument
+210513 12:30:34	    44 Query	general_log_file=/var/lib/mysql/general.log
+210513 12:30:55	    44 Query	SET GLOBAL general_log_file="/var/lib/mysql/general.log"

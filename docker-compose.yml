@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+  db:
+    image: mariadb:latest
+    container_name: db
+    environment:
+      - MYSQL_ROOT_PASSWORD=passw0rd
+    hostname: db
+    volumes:
+      - /Users/yanivc/devops/final/db/data:/var/lib/mysql
+      - /Users/yanivc/devops/final/db/conf:/etc/mysql/conf.d
+    networks:
+      - devops
+    ports:
+      - 3306:3306
+
+  webapp:
+    image: tomcat:latest
+    container_name: webapp
+    hostname: webapp
+    volumes:
+      - /Users/yanivc/devops/final/webapps:/usr/local/tomcat/webapps
+    networks:
+      - devops
+    ports:
+      - 80:8080
+    depends_on:
+      - db
+
+networks:
+  devops:
