@@ -20,7 +20,7 @@ services:
     container_name: webapp
     hostname: webapp
     volumes:
-      - /root/devops/final/FinalProject/webapps/TODO:/usr/local/tomcat/webapps
+      - /root/devops/final/FinalProject/webapps:/usr/local/tomcat/webapps
     networks:
       - devops
     ports:
