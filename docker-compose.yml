@@ -8,8 +8,8 @@ services:
       - MYSQL_ROOT_PASSWORD=passw0rd
     hostname: db
     volumes:
-      - /Users/yanivc/devops/final/db/data:/var/lib/mysql
-      - /Users/yanivc/devops/final/db/conf:/etc/mysql/conf.d
+      - ${WORKSPACE}/devops/final/db/data:/var/lib/mysql
+      - ${WORKSPACE}/devops/final/db/conf:/etc/mysql/conf.d
     networks:
       - devops
     ports:
@@ -20,7 +20,7 @@ services:
     container_name: webapp
     hostname: webapp
     volumes:
-      - /Users/yanivc/devops/final/webapps:/usr/local/tomcat/webapps
+      - ${WORKSPACE}/devops/final/webapps:/usr/local/tomcat/webapps
     networks:
       - devops
     ports:
